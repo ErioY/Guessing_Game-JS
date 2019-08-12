@@ -1,0 +1,44 @@
+<!--
+ * @Autor: ErioY
+ * @Date: 2019-08-12 16:05:02
+ * @Email: 1973545559@qq.com
+ * @Github: https://github.com/ErioY
+ * @LastEditors: ErioY
+ * @LastEditTime: 2019-08-12 16:16:53
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜数字游戏</title>
+</head>
+<body>
+    <script>
+    // 程序随机生成一个1~10的数字，并让用户输入一个数字，
+    // 1. 如果大于该数字，就提示：数字大了，并继续猜
+    // 2. 如果小于该数字，就提示：数字小了，并继续猜
+    // 3. 如果等于该数字，就提示：猜对了，结束程序
+    
+    // 生成随机数
+    function getRandom(min,max) {
+        return Math.round(Math.random() * (max - min) + min);
+    }
+    var random = getRandom(1,10);
+    while(true) { // 如果没有停止循环的语句，该循环就是死循环
+        var num = prompt("请输入一个0~10的数字：");
+       if (num > random) {
+           alert("数字大了！");
+       }
+       else if (num < random) {
+           alert("数字小了！");
+       }
+       else if (num == random) {
+           alert("恭喜你猜对了！");
+           break;
+       }
+    }
+    </script>
+</body>
+</html>
